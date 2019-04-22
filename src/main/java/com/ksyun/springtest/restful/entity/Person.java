@@ -3,7 +3,7 @@ package com.ksyun.springtest.restful.entity;
 import javax.persistence.*;
 
 @Entity
-public class Person {
+public class Person extends BaseEntity {
 
     @Id
     @GeneratedValue

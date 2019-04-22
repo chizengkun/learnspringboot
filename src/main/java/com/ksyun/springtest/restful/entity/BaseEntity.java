@@ -2,20 +2,18 @@ package com.ksyun.springtest.restful.entity;
 
 import javax.persistence.*;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 //JSONUtil
 
 @MappedSuperclass
-@Getter
-@Setter
 @DynamicUpdate
 @DynamicInsert
 public abstract class BaseEntity {
@@ -45,6 +43,6 @@ public abstract class BaseEntity {
 
     @Override
     public String toString() {
-        return JSONUtil.objectToJson(this);
+        return JSON.toJSONString(this);
     }
 }
